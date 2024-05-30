@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  nfl_db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=nfl_db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password1
+      - MYSQL_HOST=127.0.0.1
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - nfl_db:/var/lib/mysql
+volumes:
+  nfl_db:
+
+# docker-compose up 
+
+# server > app / db /
+# app > function, express, crud
+# db > crud
+# routes > health 
+# docker-compose (for local db) / Docker -> to containerize your app for web hosting to cloud 
+# app logic (code) 
+
+# CRUD = Create, Read, Update, Delete
+## Types of Routes Get, Post, Put, Delete
+### Post = Create, Get = Read, Update = Put, Delete = Delete
