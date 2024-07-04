@@ -55,7 +55,7 @@ async function playerPost(request) {
       insertId: result[0].insertId,
     };
   } catch (error) {
-    return { code: error.code, message: error.message };
+      return { code: error.code, message: error.message };
   }
 }
 
